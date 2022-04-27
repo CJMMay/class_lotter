@@ -1,48 +1,51 @@
 <template>
-  <div class="hello">
-    <div class="menu">
-      <el-row>
-        <el-col :span="13">
-          <div class="select">
-            <span>请选择班级：</span>
-            <el-select
-              v-model="value"
-              placeholder="请选择"
-              @change="changeClass"
-            >
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
+  <div>
+    <div><h1>谁是幸运儿</h1></div>
+    <div class="hello">
+      <div class="menu">
+        <el-row>
+          <el-col :span="13">
+            <div class="select">
+              <span>请选择班级：</span>
+              <el-select
+                v-model="value"
+                placeholder="请选择"
+                @change="changeClass"
               >
-              </el-option>
-            </el-select></div
-        ></el-col>
-        <el-col :span="3" :offset="3">
-          <el-button type="success" @click="startRun">开始</el-button></el-col
-        >
-        <el-col :span="3">
-          <!-- <el-button type="primary" icon="el-icon-setting"
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select></div
+          ></el-col>
+          <el-col :span="3" :offset="3">
+            <el-button type="success" @click="startRun">开始</el-button></el-col
+          >
+          <el-col :span="3">
+            <!-- <el-button type="primary" icon="el-icon-setting"
             >设置</el-button
           > -->
-          <el-button size="primary" type="primary">设置</el-button>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="main">
-      <el-row>
-        <el-col :span="20" :offset="2" class="mainStu">
-          <div
-            v-for="(item, index1) in stulist"
-            :key="index1"
-            class="stu"
-            :class="index1 == index ? 'activity' : 'stu'"
-          >
-            {{ item.stu }}
-          </div>
-        </el-col>
-      </el-row>
+            <el-button size="primary" type="primary">设置</el-button>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="main">
+        <el-row>
+          <el-col :span="20" :offset="2" class="mainStu">
+            <div
+              v-for="(item, index1) in stulist"
+              :key="index1"
+              class="stu"
+              :class="index1 == index ? 'activity' : 'stu'"
+            >
+              {{ item.stu }}
+            </div>
+          </el-col>
+        </el-row>
+      </div>
     </div>
   </div>
 </template>
@@ -122,7 +125,7 @@ export default {
         } else if (this.times === this.cycle) {
           // 随机获得一个中奖位置
           // const index = parseInt(Math.random() * this.count, 0) || 0;
-          const index =Math.floor(Math.random() * this.count)
+          const index = Math.floor(Math.random() * this.count);
           this.prize = index;
           if (this.prize > this.count - 1) {
             this.prize = this.count - 1;
@@ -161,14 +164,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+h1 {
+  font-size: 50px;
+}
 .hello {
   width: 60%;
   border: 1px solid #fc3;
   background-color: #fc3;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction:column; */
+  margin: 10px auto;
 }
 .menu {
   margin: 10px auto;

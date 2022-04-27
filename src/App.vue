@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>谁是幸运儿</h1>
     <router-view />
   </div>
 </template>
@@ -18,13 +17,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-h1 {
-  font-size: 50px;
-}
+
 </style>
